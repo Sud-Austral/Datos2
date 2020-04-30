@@ -20,6 +20,7 @@ from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
 import re
+import FuncDes as fu
 import tweepy
 import gc
 #from datetime import datetime
@@ -437,7 +438,7 @@ def KoBoToolbox():
     url = "https://kc.humanitarianresponse.info/api/v1/forms/520455.csv"
 
     #response = requests.patch(url, auth=('sudaustral', 'Sudaustral2020+'))
-    response = requests.get(url, auth=('sudaustral', 'Sudaustral2020+'))
+    response = requests.get(url, auth=('sudaustral', fu.desPass()))
     decoded_data = codecs.decode(response.content, 'utf-8-sig')
     archivo = open("data_aux.txt", "w") 
     archivo.write(decoded_data) 
